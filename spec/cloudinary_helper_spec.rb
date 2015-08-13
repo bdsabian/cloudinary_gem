@@ -70,5 +70,13 @@ RSpec.describe CloudinaryHelper do
         expect(test_tag['data-src']).to eq( "http://res.cloudinary.com/test/image/upload/dpr_auto/sample.jpg")
       end
     end
+
+    context ":aspect_ratio" do
+      let(:options) { {:aspect_ratio => 2, :cloud_name => "test"} }
+      it "should ar param when passed aspect_ratio option" do
+        expect(test_tag.name).to_match( 'img')
+        expect(test_tag['src']).to eq( "http://res.cloudinary.com/test/image/upload/ar_2/sample.jpg")
+      end
+    end
   end
 end

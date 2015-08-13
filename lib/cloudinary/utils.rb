@@ -18,8 +18,8 @@ class Cloudinary::Utils
     options.keys.each do |key|
       options[(key.to_sym rescue key)] = options.delete(key)
     end
-    
-    responsive_width = config_option_consume(options, :responsive_width) 
+
+    responsive_width = config_option_consume(options, :responsive_width)
     size = options.delete(:size)
     options[:width], options[:height] = size.split("x") if size
     width = options[:width]
@@ -85,6 +85,7 @@ class Cloudinary::Utils
     }
     {
       :ac => :audio_codec,
+      :ar => :aspect_ratio,
       :br => :bit_rate,
       :cs => :color_space,
       :d  => :default_image,
